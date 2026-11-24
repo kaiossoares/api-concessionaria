@@ -22,7 +22,6 @@ src/main/java/br/com/concessionaria
 database/
 ├── 01-schema.sql                        # criação da tabela
 └── 02-dados-exemplo.sql                 # dados de exemplo (opcional)
-postman/api-concessionaria.postman_collection.json
 ```
 
 Como é uma API REST, a "View" é a representação JSON devolvida pelo controller.
