@@ -1,0 +1,19 @@
+#   docker compose up -d      -> sobe o banco
+#   docker compose down       -> para o banco (mantém os dados)
+#   docker compose down -v    -> para e APAGA os dados (na próxima subida os scripts rodam de novo)
+services:
+  postgres:
+    image: postgres:17
+    container_name: concessionaria-db
+    environment:
+      POSTGRES_DB: concessionaria
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d:ro
+      - dados-postgres:/var/lib/postgresql/data
+
+volumes:
+  dados-postgres:
